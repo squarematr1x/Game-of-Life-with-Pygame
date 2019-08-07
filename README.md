@@ -1,6 +1,6 @@
 # Game-of-Life-with-Pygame
 
-Creating GUI with Pygame to demonstrate [John Conway's famous cellular automata](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). 
+Creating a GUI with Pygame to demonstrate [John Conway's famous cellular automata](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). 
 
 ## Rules
 * Any live cell with fewer than two live neighbours dies, as if by underpopulation.
