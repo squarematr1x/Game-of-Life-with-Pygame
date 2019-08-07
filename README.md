@@ -14,3 +14,4 @@ Creating GUI with Pygame to demonstrate [John Conway's famous cellular automata]
 * Pausing the game
 * Displaying the number of living cells in the grid
 * Displaying the percentage of living cells
+* Changing the color of the cell according to the number of adjacent cells
