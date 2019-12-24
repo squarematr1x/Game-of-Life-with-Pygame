@@ -13,7 +13,11 @@ def main():
 
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
-    GREEN = (90, 150, 30)
+    GREEN1 = (90, 150, 30)
+    GREEN2 = (0, 61, 0)
+    GREEN3 = (0, 102, 0)
+    GREEN4 = (0, 153, 0)
+    GREEN5 = (76, 153, 0)
 
     WIDTH = 20
     HEIGHT = 20
@@ -48,6 +52,20 @@ def main():
                 if event.key == pygame.K_e and not cells_selected:
                     gol.empty_grid()
 
+            elif event.type == pygame.MOUSEMOTION:
+                if pygame.mouse.get_pressed()[0]:
+                    pos = pygame.mouse.get_pos()
+
+                    try:
+                        x = pos[1] // (HEIGHT + MARGIN)
+                        y = pos[0] // (WIDTH + MARGIN)
+
+                        if gol.grid[x][y] == 0:
+                            gol.grid[x][y] = 1
+
+                    except IndexError:
+                        pass
+
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos()
 
@@ -72,16 +90,16 @@ def main():
                 if cells_selected:
                     if gol.grid[i][j] == 1:
                         if gol.neighbours(i, j) >= 4:
-                            color = (0, 61, 0)
+                            color = GREEN2
                         if gol.neighbours(i, j) == 3:
-                            color = (0, 102, 0)
+                            color = GREEN3
                         if gol.neighbours(i, j) == 2:
-                            color = (0, 153, 0)
+                            color = GREEN4
                         if gol.neighbours(i, j) == 1:
-                            color = (76, 153, 0)
+                            color = GREEN5
                 else:
                     if gol.grid[i][j] == 1:
-                        color = GREEN
+                        color = GREEN1
 
                 pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * j + MARGIN,
                                  (MARGIN + HEIGHT) * i + MARGIN, WIDTH, HEIGHT])
