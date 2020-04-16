@@ -18,3 +18,6 @@ Creating a GUI with Pygame to demonstrate [John Conway's famous cellular automat
 
 ### One possible state of the game:
 ![One possible state of the game](https://raw.githubusercontent.com/squarematr1x/Game-of-Life-with-Pygame/master/one_possible_state_of_game.png)
+
+### New colors:
+![New colors](https://raw.githubusercontent.com/squarematr1x/Game-of-Life-with-Pygame/master/new_colors.png)
