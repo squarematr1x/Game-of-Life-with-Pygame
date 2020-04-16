@@ -1,6 +1,5 @@
 import random
 
-
 class GameOfLife:
 
     def __init__(self, grid_width, grid_height):

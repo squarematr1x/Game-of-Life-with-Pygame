@@ -1,5 +1,6 @@
 import pygame
 from GOL import GameOfLife
+from Colors import Colors
 
 def text_objects(text, font):
     text_surface = font.render(text, True, (255, 255, 255))
@@ -10,14 +11,11 @@ def main():
     grid_h = 26
 
     gol = GameOfLife(grid_w, grid_h)
+    colors = Colors()
 
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
-    GREEN1 = (90, 150, 30)
-    GREEN2 = (0, 61, 0)
-    GREEN3 = (0, 102, 0)
-    GREEN4 = (0, 153, 0)
-    GREEN5 = (76, 153, 0)
+    COLORS = colors.get_colors()
 
     WIDTH = 20
     HEIGHT = 20
@@ -51,6 +49,9 @@ def main():
                     gol.initialize_grid()
                 if event.key == pygame.K_e and not cells_selected:
                     gol.empty_grid()
+                if event.key == pygame.K_c:
+                    colors.change_colors()
+                    COLORS = colors.get_colors()
 
             elif event.type == pygame.MOUSEMOTION:
                 if pygame.mouse.get_pressed()[0]:
@@ -81,7 +82,7 @@ def main():
                 except IndexError:
                     pass
 
-        pygame.time.delay(100)
+        pygame.time.delay(80)
 
         for i in range(len(gol.grid)):
             for j in range(len(gol.grid[0])):
@@ -90,16 +91,16 @@ def main():
                 if cells_selected:
                     if gol.grid[i][j] == 1:
                         if gol.neighbours(i, j) >= 4:
-                            color = GREEN2
+                            color = COLORS[1]
                         if gol.neighbours(i, j) == 3:
-                            color = GREEN3
+                            color = COLORS[2]
                         if gol.neighbours(i, j) == 2:
-                            color = GREEN4
+                            color = COLORS[3]
                         if gol.neighbours(i, j) == 1:
-                            color = GREEN5
+                            color = COLORS[4]
                 else:
                     if gol.grid[i][j] == 1:
-                        color = GREEN1
+                        color = COLORS[0]
 
                 pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * j + MARGIN,
                                  (MARGIN + HEIGHT) * i + MARGIN, WIDTH, HEIGHT])
@@ -118,7 +119,7 @@ def main():
             text_rect.center = (((grid_w * (WIDTH + MARGIN)) // 2), ((HEIGHT + MARGIN) * grid_h) + grid_h // 3)
             screen.blit(text_surf, text_rect)
 
-            text_surf, text_rect = text_objects("Press <SPACE> to start the game and pause by pressing <ESC>",
+            text_surf, text_rect = text_objects("Press <SPACE> to start the game,pause by pressing <ESC> and change colors with <C>",
                                                 info_text)
             text_rect.center = (((grid_w * (WIDTH + MARGIN)) // 2), ((HEIGHT + MARGIN) * grid_h) + grid_h)
             
