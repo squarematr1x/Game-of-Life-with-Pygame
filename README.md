@@ -10,14 +10,12 @@ Creating a GUI with Pygame to demonstrate [John Conway's famous cellular automat
 
 ## Features
 * Initializing random game grid
-* Selecting/deselecting living cells
+* Selecting/deselecting living cells with mouse
 * Pausing the game
 * Displaying the number of living cells in the grid
 * Displaying the percentage of living cells
 * Changing the color of the cell according to the number of adjacent cells
+* Changing the color theme
 
 ### One possible state of the game:
 ![One possible state of the game](https://raw.githubusercontent.com/squarematr1x/Game-of-Life-with-Pygame/master/one_possible_state_of_game.png)
-
-### New colors:
-![New colors](https://raw.githubusercontent.com/squarematr1x/Game-of-Life-with-Pygame/master/new_colors.png)
