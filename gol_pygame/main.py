@@ -82,8 +82,6 @@ def main():
                 except IndexError:
                     pass
 
-        pygame.time.delay(80)
-
         for i in range(len(gol.grid)):
             for j in range(len(gol.grid[0])):
                 color = WHITE
@@ -106,6 +104,7 @@ def main():
                                  (MARGIN + HEIGHT) * i + MARGIN, WIDTH, HEIGHT])
 
         if cells_selected:
+            pygame.time.delay(80)
             grid = gol.update_grid()
             percentage = round(gol.pct_of_living * 100)
             cells = gol.count
