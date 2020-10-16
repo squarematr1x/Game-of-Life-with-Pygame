@@ -18,4 +18,13 @@ Creating a GUI with Pygame to demonstrate [John Conway's famous cellular automat
 * Changing the color theme
 
 ### One possible state of the game:
-![One possible state of the game](https://raw.githubusercontent.com/squarematr1x/Game-of-Life-with-Pygame/master/one_possible_state_of_game.png)
+
+![state_a](https://github.com/squarematr1x/Game-of-Life-with-Pygame/blob/master/Resources/state_a.png?raw=true)
+
+### Another possible state of the game:
+
+![state_b](https://github.com/squarematr1x/Game-of-Life-with-Pygame/blob/master/Resources/state_b.png?raw=true)
+
+### Yet another possible state of the game:
+
+![state_c](https://github.com/squarematr1x/Game-of-Life-with-Pygame/blob/master/Resources/state_c.png?raw=true)
